@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada - 404</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Iconos de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #f0f8ff; /* Fondo azul claro médico */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .error-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .error-code {
+            font-size: 9rem;
+            font-weight: 900;
+            color: #0d6efd; /* Azul corporativo */
+            text-shadow: 6px 6px 0px rgba(13, 110, 253, 0.15); /* Sombra para darle volumen */
+            line-height: 1;
+            margin-bottom: 0;
+        }
+        .medical-icon {
+            font-size: 5rem;
+            color: #dc3545; /* Rojo tipo cruz de emergencia */
+            animation: pulse 2s infinite;
+        }
+        /* Pequeña animación de latido para el ícono */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="error-container">
+        <div class="container px-5">
+            <!-- Icono animado -->
+            <div class="medical-icon mb-2">
+                <i class="bi bi-heartbreak-fill"></i>
+            </div>
+            
+            <!-- Código de error gigante -->
+            <h1 class="error-code">404</h1>
+            
+            <!-- Mensaje principal -->
+            <h2 class="display-6 fw-bold mt-3 mb-3 text-dark">¡Ups! Esta página necesita primeros auxilios</h2>
+            
+            <!-- Descripción -->
+            <p class="lead text-muted mb-5 mx-auto" style="max-width: 600px;">
+                No pudimos encontrar la ruta clínica que estás buscando. Es posible que el enlace esté roto, la página haya sido movida, o simplemente te hayas desviado del pasillo principal.
+            </p>
+            
+            <!-- Botones de acción -->
+            <div class="d-flex justify-content-center gap-3">
+                <a href="/" class="btn btn-primary btn-lg px-4 rounded-pill shadow-sm">
+                    <i class="bi bi-house-door-fill me-2"></i>Ir a Recepción (Inicio)
+                </a>
+                <a href="javascript:history.back()" class="btn btn-outline-secondary btn-lg px-4 rounded-pill">
+                    <i class="bi bi-arrow-left me-2"></i>Volver atrás
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
