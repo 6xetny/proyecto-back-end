@@ -4,11 +4,11 @@
 ## Instrucciones de Instalación y Ejecución
 
 ### 1. Crear el Ambiente Virtual
-    Abre un terminal en el directorio de tu proyecto y ejecuta el siguiente comando para crear el ambiente aislado:
+ Abre un terminal en el directorio de tu proyecto y ejecuta el siguiente comando para crear el ambiente aislado:
 
-    ```
-    python -m venv ambiente
-    ```
+ ```
+ python -m venv ambiente
+ ```
 
 2. **Activación del Ambiente Virtual.**
     Activar el Ambiente Virtual
