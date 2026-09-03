@@ -1,15 +1,11 @@
-# proyecto-back-end
 
-Clases de Backend con DJango
-
-## Proyectos Backend con Django
-# Proyecto Backend con Django
+# Proyectos Backend con Django
 
 ## Instrucciones de Instalación y Ejecución
 
 ### 1. Crear el Ambiente Virtual
     Abre un terminal en el directorio de tu proyecto y ejecuta el siguiente comando para crear el ambiente aislado:
-    
+
     ```
     python -m venv ambiente
     ```
