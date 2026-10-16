@@ -15,12 +15,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from appTurnos import views
 
-app_name = 'Turnos'
+app_name = 'turnos'
 
 urlpatterns = [
+    # Panel de administrador
     path('admin/', admin.site.urls),
-    path('', views.inicio, name='inicio')
+    
+    # Rutas web (Frontend HTML)
+    path('', views.inicio, name='inicio'),
+    path('turnos/', views.agendar_turno, name='agendar_turno'),
+    
+    # Rutas API (Incluimos las rutas autogeneradas del enrutador)
+    path('api/', include('appTurnos.urls')),
 ]

@@ -1,62 +1,69 @@
+# Centro Médico Vida - Backend (appTurnos)
 
-# Proyectos Backend con Django
+Este repositorio contiene el backend del sistema de agendamiento para el Centro Médico Vida, desarrollado con Django y Django Rest Framework utilizando Vistas Basadas en Clase (CBV).
 
-## Instrucciones de Instalación y Ejecución
+## 👨‍💻 Autor
+* Bastián
 
-### 1. Crear el Ambiente Virtual
- Abre un terminal en el directorio de tu proyecto y ejecuta el siguiente comando para crear el ambiente aislado:
+---
 
- ```
- python -m venv ambiente
- ```
+## 🚀 Cómo ejecutar este proyecto localmente
 
-2. **Activación del Ambiente Virtual.**
-    Activar el Ambiente Virtual
-    Navega al subdirectorio Scripts dentro del ambiente creado y actívalo:
-    - Mediante el terminal nos ubicamos dentro del directorio creado con la instrucción anterior.
-    - Dentro de este directorio, nos movemos al subdirectorio Scripts.
-    - Dentro de Scripts, ejecutamos el siguiente comando en nuestro terminal:
+### 1. Preparar el entorno virtual
+Abre la carpeta del proyecto en la terminal y crea/activa el entorno virtual:
 
-    ```
-    .\Activate
-    ```
-    - Si obtienes un error de permisos en el terminal, ejecuta esta instrucción y vuelve a intentar la activación:
+    python -m venv ambiente
+    .\ambiente\Scripts\Activate
 
-    ```
-    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-    ```
+### 2. Instalar dependencias
+Instala todas las librerías necesarias preparadas en el proyecto:
 
-    - Si trabajamos en varios proyectos y debemos cambiar de un ambiente a otro, desactivaremos el ambiente con el siguiente comando:
+    pip install -r requirements.txt
 
-    ```
-    deactivate
-   ```
+### 3. Configurar variables de entorno
+Crea un archivo llamado .env en la raíz del proyecto (al mismo nivel que manage.py) y agrega la clave secreta de Django:
 
-3. **Instalar Dependencias**
-    Con el ambiente activo, instala las dependencias necesarias:
+    SECRET_KEY='tu_clave_secreta_aqui'
 
-    ```
-    pip install django
-    ```
-    - Ahora que las dependencias de Django ya han sido instaladas, crearemos nuestro primer proyecto Django, ejecutando el siguiente comando:
-    ```
-    django-admin startproject nombre_django .
-    ```
-    - nombre_django debe ser reemplazado por el nombre que Ud. le dará a su motor Django, es común que se use el acrónimo drf (Django 
-    Rest framework). Idealmente debe ser un nombre corto, porque deberemos llamarlo en más de alguna oportunidad.
+### 4. Base de datos y Fixtures
+Aplica las migraciones para construir las tablas en SQLite y carga los pacientes de prueba iniciales:
 
-4. **Creación de Aplicación**
-    - Cuando ya tenemos un motor Django funcional, podemos crear nuestra aplicación particular que contendrá los controladores, las vistas y los modelos.
-    - Para crear nuestra aplicación, nos ubicamos mediante el terminal en la carpeta raíz del proyecto y ejecutamos el siguiente comando:
-    ```
-    django-admin startapp nombre_aplicacion
-    ```
-    - nombre_aplicacion debe ser reemplazado por el nombre que Ud. le dará a su aplicación, el que debe ser descriptivo para seguir normativas de buenas prácticas.
-    - Una vez creada la aplicación, debemnos agregar el nombre de la aplicación a la lista de INSTALLED_APPS de setting.py de nuestro núcleo django.
-    - Ya creada la aplicación, iniciamos el servidor para confirmar que todo está funcionando OK.
-    - El servidor se inicia con el siguiente comando mediante terminal:
-    ```
+    python manage.py migrate
+    python manage.py loaddata pacientes_iniciales.json
+
+### 5. Crear usuario administrador
+Para poder acceder al panel de control de Django (/admin/), crea un superusuario:
+
+    python manage.py createsuperuser
+
+### 6. Ejecutar el servidor
+Finalmente, levanta el proyecto localmente:
+
     python manage.py runserver
-    ```
-    - Si todo ha funcionado de manera correcta, debiera cargar una vista genérica de Django al iniciar el servidor.
 
+* Sitio web (Frontend): http://127.0.0.1:8000/
+* API Root (Backend): http://127.0.0.1:8000/api/
+
+---
+
+## 🛠️ Guía Rápida: Cómo crear un proyecto Django desde cero
+*(Resumen de comandos base para futuros proyectos)*
+
+1. Iniciar el entorno y el proyecto
+* python -m venv ambiente ➡️ Crea el entorno virtual.
+* .\ambiente\Scripts\Activate ➡️ Activa el entorno.
+* pip install --upgrade pip ➡️ Actualiza el gestor de paquetes.
+* pip install django djangorestframework python-decouple ➡️ Instala las herramientas clave.
+* django-admin startproject motor_django . ➡️ Crea el proyecto base.
+* django-admin startapp mi_aplicacion ➡️ Crea tu aplicación interna.
+
+2. Base de Datos y Modelos
+* python manage.py makemigrations ➡️ Traduce tus clases de models a SQL.
+* python manage.py migrate ➡️ Ejecuta las instrucciones y crea las tablas.
+
+3. Datos Iniciales y Administración
+* python manage.py loaddata archivo.json ➡️ Carga datos precargados.
+* python manage.py createsuperuser ➡️ Genera el acceso de administrador.
+
+4. Buenas prácticas antes de entregar
+* pip freeze > requirements.txt ➡️ Guarda la lista exacta de librerías.
