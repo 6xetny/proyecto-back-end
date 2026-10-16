@@ -46,23 +46,23 @@ Finalmente, levanta el proyecto localmente:
 
 ---
 
-## 🛠️ Guía Rápida: Cómo crear un proyecto Django desde cero
+## Guía Rápida: Cómo crear un proyecto Django desde cero
 *(Resumen de comandos base para futuros proyectos)*
 
 1. Iniciar el entorno y el proyecto
-* python -m venv ambiente ➡️ Crea el entorno virtual.
-* .\ambiente\Scripts\Activate ➡️ Activa el entorno.
-* pip install --upgrade pip ➡️ Actualiza el gestor de paquetes.
-* pip install django djangorestframework python-decouple ➡️ Instala las herramientas clave.
-* django-admin startproject motor_django . ➡️ Crea el proyecto base.
-* django-admin startapp mi_aplicacion ➡️ Crea tu aplicación interna.
+* python -m venv ambiente --> Crea el entorno virtual.
+* .\ambiente\Scripts\Activate --> Activa el entorno.
+* pip install --upgrade pip --> Actualiza el gestor de paquetes.
+* pip install django djangorestframework python-decouple --> Instala las herramientas clave.
+* django-admin startproject motor_django . --> Crea el proyecto base.
+* django-admin startapp mi_aplicacion --> Crea tu aplicación interna.
 
 2. Base de Datos y Modelos
-* python manage.py makemigrations ➡️ Traduce tus clases de models a SQL.
-* python manage.py migrate ➡️ Ejecuta las instrucciones y crea las tablas.
+* python manage.py makemigrations --> Traduce tus clases de models a SQL.
+* python manage.py migrate --> Ejecuta las instrucciones y crea las tablas.
 
 3. Datos Iniciales y Administración
-* python manage.py loaddata archivo.json ➡️ Carga datos precargados.
+* python manage.py loaddata archivo.json --> Carga datos precargados.
 * python manage.py createsuperuser ➡️ Genera el acceso de administrador.
 
 4. Buenas prácticas antes de entregar
