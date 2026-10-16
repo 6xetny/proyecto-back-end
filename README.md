@@ -2,12 +2,12 @@
 
 Este repositorio contiene el backend del sistema de agendamiento para el Centro Médico Vida, desarrollado con Django y Django Rest Framework utilizando Vistas Basadas en Clase (CBV).
 
-## 👨‍💻 Autor
+## Autor
 * Bastián
 
 ---
 
-## 🚀 Cómo ejecutar este proyecto localmente
+## Cómo ejecutar este proyecto localmente
 
 ### 1. Preparar el entorno virtual
 Abre la carpeta del proyecto en la terminal y crea/activa el entorno virtual:
