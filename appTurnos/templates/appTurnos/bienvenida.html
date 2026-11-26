@@ -1,0 +1,14 @@
+{% extends 'appTurnos/base.html' %}
+{% block title %}Bienvenida - Centro Médico{% endblock %}
+{% block content %}
+<div class="p-5 bg-light rounded-3 border">
+    <h1 class="display-5 fw-bold">Sistema de Gestión de Turnos Médicos</h1>
+    <p class="lead">Bienvenido al portal web del Centro Médico. Administra pacientes, especialistas y reservas de turnos.</p>
+    <hr class="my-4">
+    <div class="d-flex gap-2 flex-wrap">
+        <a class="btn btn-primary" href="{% url 'paciente_list' %}">Gestionar Pacientes</a>
+        <a class="btn btn-success" href="{% url 'especialista_list' %}">Gestionar Especialistas</a>
+        <a class="btn btn-info text-white" href="{% url 'turno_list' %}">Gestionar Turnos</a>
+    </div>
+</div>
+{% endblock %}

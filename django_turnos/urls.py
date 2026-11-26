@@ -25,7 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     # Rutas web (Frontend HTML)
-    path('', views.inicio, name='inicio'),
+    path('', views.BienvenidaView.as_view(), name='bienvenida'),
     path('turnos/', views.agendar_turno, name='agendar_turno'),
     
     # Rutas API (Incluimos las rutas autogeneradas del enrutador)

@@ -1,0 +1,17 @@
+{% extends 'appTurnos/base.html' %}
+{% block title %}Detalle Paciente{% endblock %}
+{% block content %}
+<div class="card p-4">
+    <h2>{{ paciente.nombre }} {{ paciente.apellido }}</h2>
+    <p><strong>RUT:</strong> {{ paciente.rut }}</p>
+    <p><strong>Email:</strong> {{ paciente.email }}</p>
+    <p><strong>Teléfono:</strong> {{ paciente.telefono }}</p>
+    <p><strong>Fecha de Nacimiento:</strong> {{ paciente.fecha_nacimiento }}</p>
+    <p><strong>Estado:</strong> {% if paciente.activo %}Activo{% else %}Inactivo{% endif %}</p>
+    <div class="d-flex gap-2 mt-3">
+        <a href="{% url 'paciente_update' paciente.pk %}" class="btn btn-warning">Editar</a>
+        <a href="{% url 'paciente_delete' paciente.pk %}" class="btn btn-danger">Eliminar</a>
+        <a href="{% url 'paciente_list' %}" class="btn btn-secondary">Volver al listado</a>
+    </div>
+</div>
+{% endblock %}

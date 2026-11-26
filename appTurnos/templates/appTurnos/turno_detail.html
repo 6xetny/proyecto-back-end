@@ -1,0 +1,18 @@
+{% extends 'appTurnos/base.html' %}
+{% block title %}Detalle Turno{% endblock %}
+{% block content %}
+<div class="card p-4">
+    <h2>Turno #{{ turno.pk }}</h2>
+    <p><strong>Paciente:</strong> {{ turno.paciente }}</p>
+    <p><strong>Especialista:</strong> {{ turno.especialista }}</p>
+    <p><strong>Fecha:</strong> {{ turno.fecha }}</p>
+    <p><strong>Hora:</strong> {{ turno.hora }}</p>
+    <p><strong>Estado:</strong> {{ turno.estado }}</p>
+    <p><strong>Observaciones:</strong> {{ turno.observaciones|default:"Sin observaciones" }}</p>
+    <div class="d-flex gap-2 mt-3">
+        <a href="{% url 'turno_update' turno.pk %}" class="btn btn-warning">Editar</a>
+        <a href="{% url 'turno_delete' turno.pk %}" class="btn btn-danger">Eliminar</a>
+        <a href="{% url 'turno_list' %}" class="btn btn-secondary">Volver al listado</a>
+    </div>
+</div>
+{% endblock %}

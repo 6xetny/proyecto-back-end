@@ -1,0 +1,15 @@
+{% extends 'appTurnos/base.html' %}
+{% block title %}Detalle Especialista{% endblock %}
+{% block content %}
+<div class="card p-4">
+    <h2>{{ especialista.nombre }} {{ especialista.apellido }}</h2>
+    <p><strong>RUT:</strong> {{ especialista.rut }}</p>
+    <p><strong>Especialidad:</strong> {{ especialista.especialidad }}</p>
+    <p><strong>Estado:</strong> {% if especialista.activo %}Activo{% else %}Inactivo{% endif %}</p>
+    <div class="d-flex gap-2 mt-3">
+        <a href="{% url 'especialista_update' especialista.pk %}" class="btn btn-warning">Editar</a>
+        <a href="{% url 'especialista_delete' especialista.pk %}" class="btn btn-danger">Eliminar</a>
+        <a href="{% url 'especialista_list' %}" class="btn btn-secondary">Volver al listado</a>
+    </div>
+</div>
+{% endblock %}

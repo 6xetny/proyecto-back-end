@@ -1,0 +1,13 @@
+{% extends 'appTurnos/base.html' %}
+{% block title %}{{ titulo }}{% endblock %}
+{% block content %}
+<div class="card border-danger p-4">
+    <h2 class="text-danger">{{ titulo }}</h2>
+    <p>¿Estás seguro de que deseas eliminar <strong>{{ objeto }}</strong>?</p>
+    <form method="post" class="d-flex gap-2">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+        <a href="{{ url_volver }}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
